@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- end -->
+
+<title>Document</title>
+</head>
+<!-- end -->
+
+<body>
+
+
+
+<div id="wrap-login" style="height : 100%;">
+  <%- include login.ejs %>
+  <!-- <label>Username : <input type="text" name="username" id="username"></label>
+  <label>Password : <input type="text" name="password" id="password"></label>
+  <button type="button" name="login" id="register">Login</button> -->
+</div>
+
+
+<div id="wrap-messages">
+
+<header id="header">
+    <div class="container-fluid primary-header">
+        <div class="row">
+            <ul class="nav nav-pills primary-navigation">
+
+  <span class="alert alert-success" id="alert"></span>
+
+
+                <li role="presentation" class="pull-right"><a href="http://127.0.0.1:8000/#">Đăng ký</a></li>
+                <li role="presentation" class="pull-right active"><a href="http://127.0.0.1:8000/#" id="hello_guest">Đăng nhập</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- end -->
+
+<section id="wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row" id="wrap-result">
+                    <div class="primary-content-text  result-text" style="padding:15px; padding-left:25px;" id="content-messages">
+
+
+
+                    </div>
+                </div>
+                <!-- end -->
+
+                <div class="row" style="padding:5px;padding-left:75px;position:relative;">
+                    <div id="attachment" style="position:absolute;left:0;top:0;height:100%;z-index:9;width:70px;padding:5px;">
+                        <div>
+                            <ul class="list-group">
+                                <li> <a href="" class="btn btn-primary" style="width:40px;margin-bottom:1px;"><i class="fa fa-picture-o" aria-hidden="true"></i></a> </li>
+                                <li> <a href="" class="btn btn-primary" style="width:40px;margin-bottom:1px;"><i class="fa fa-paperclip" aria-hidden="true"></i></a> </li>
+                                   <li> <a href="" class="btn btn-primary" style="width:40px;margin-bottom:1px;"><i class="fa fa-star-half-o" aria-hidden="true"></i></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap-content" style="position:relative;">
+                        <div class="wrap-button-send" style="position:absolute;right:2px;bottom:2px;">
+                         <a href="javascript:void(0);" class="btn btn-primary" title="Biểu tượng chat"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
+                         <a href="javascript:void(0);" class="btn btn-primary" title="Gửi tin nhắn" id="send"><i class="fa fa-paper-plane" aria-hidden="true"></i></a> </div>
+                        <textarea class="form-control" id="content" style="height:242px;resize:none;padding:15px 20px;border-radius:2px !important;border-color:#c1e6ff;outline:none; box-shadow:none;    padding-right: 100px;" placeholder="Vui lòng nhập nội dung tin nhắn..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" id="sidebar">
+                <div class="row">
+                    <input type="text" class="form-control search-custom" placeholder="Tìm liên hệ..." id="autocomplete" autocomplete="off">
+                </div>
+                <!-- end -->
+
+                <div class="row">
+                    <div class="list-group"  id="list-online">
+
+                    <a href="#" class="list-group-item">
+                        <div class="col-xs-2 avatar">
+                            <div class="row" > <img class="sidebar-avatar" src="assets/images/hoangsi.png" alt="Hoàng Minh Sĩ"> </div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row sidebar-user"> <strong>NGUYỄN NGỌC THƠ</strong><br>
+                                <small class="label label-success" style="font-weight:lighter;position:relative;top:-2px;padding:2px 5px">ASIBA</small>
+                                <i class="fa fa-circle pull-right" aria-hidden="true" style="color:#76EE00;margin-left:10px;position:relative;top: -6px;
+    font-size: 11px;"></i> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </a>
+                        <!-- end contact -->
+
+                        <a href="#" class="list-group-item ">
+                        <div class="col-xs-2 avatar">
+                            <div class="row" > <img class="sidebar-avatar" src="assets/images/hoangsi.png" alt="Hoàng Minh Sĩ"> </div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row sidebar-user"> <strong>HOÀNG MINH SĨ </strong><br>
+                                <small class="label label-success" style="font-weight:lighter;position:relative;top:-2px;padding:2px 5px">IT</small>
+                                <i class="fa fa-circle pull-right" aria-hidden="true" style="color:#FFC107;margin-left:10px;position:relative;top: -6px;
+    font-size: 11px;"></i> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </a>
+                        <!-- end contact -->
+
+                           <a href="#" class="list-group-item ">
+                        <div class="col-xs-2 avatar">
+                            <div class="row" > <img class="sidebar-avatar" src="assets/images/hoangsi.png" alt="Hoàng Minh Sĩ"> </div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row sidebar-user"> <strong>PHẠM HOÀNG VŨ</strong><br>
+                                <small class="label label-success" style="font-weight:lighter;position:relative;top:-2px;padding:2px 5px">ZENDAN</small>
+
+                                <i class="fa fa-circle-o pull-right" aria-hidden="true" style="color:#5cb85c;margin-left:10px;position:relative;top:-7px;"></i> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </a>
+                        <!-- end contact -->
+
+                         <a href="#" class="list-group-item ">
+                        <div class="col-xs-2 avatar">
+                            <div class="row" > <img class="sidebar-avatar" src="assets/images/hoangsi.png" alt="Hoàng Minh Sĩ"> </div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row sidebar-user"> <strong>PHẠM THÀNH LONG </strong><br>
+                                <small class="label label-success" style="font-weight:lighter;position:relative;top:-2px;padding:2px 5px">FORM</small>
+
+                                <i class="fa fa-ban pull-right" aria-hidden="true" style="color:#d9534f;margin-left:10px;position:relative;top:-7px;"></i> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </a>
+                        <!-- end contact -->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end -->
+
+<footer id="footer">
+    <div class="copyright container-fluid">
+        <p style="font-size:12px;"> Copyright © Hoang Si. All Rights Reserved. </p>
+    </div>
+</footer>
+<!-- end -->
+</div>
+
+
+
+
+
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/jquery.min.js"></script>
+<script> $('#wrap-login').show(); $('#wrap-messages').hide(); $('#alert').hide(); </script>
+
+<script src="socket.io/socket.io.js"></script>
+<script>
+  var socket = io('https://hoangsi-messages.herokuapp.com/'); // Kết nối với server
+  socket.on('server-register-fail', function(data_register) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+    $('#alert').show();
+   $('#alert').html('Tên người dùng '+data_register[0]+' đã tồn tại <br />');
+});
+
+  socket.on('server-register-success', function(data_register) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+   $('#hello_guest').html('Chào '+data_register[0]);
+   $('#alert').show();
+   $('#wrap-login').hide(); $('#wrap-messages').show();
+ });
+
+  socket.on('server-list-online', function(arr_User) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+
+    $('#list-online').html('');
+   arr_User.forEach(function(i){
+     $('#list-online').append(`<a href="#" class="list-group-item">
+         <div class="col-xs-2 avatar">
+             <div class="row" > <img class="sidebar-avatar" src="images/hoangsi.png" alt="`+i+`"> </div>
+         </div>
+         <div class="col-xs-10">
+             <div class="row sidebar-user"> <strong>`+i+`</strong><br>
+                 <small class="label label-success" style="font-weight:lighter;position:relative;top:-2px;padding:2px 5px">ASIBA</small>
+                 <i class="fa fa-circle pull-right" aria-hidden="true" style="color:#76EE00;margin-left:10px;position:relative;top: -6px;
+font-size: 11px;"></i> </div>
+         </div>
+         <div class="clearfix"></div>
+         </a>`);
+   });
+   });
+
+
+   socket.on('server-ridirect-user-online', function(id_online) {
+    $('#alert').html('Người dùng '+id_online+' đã online');
+   });
+
+
+
+socket.on('server-difirence-user-logout', function(id_logout) {
+  $('#alert').html('Người dùng '+id_logout+' đã offline');
+});
+
+socket.on('server-ridirect-after-logout', function() {
+  $('#wrap-login').show(); $('#wrap-messages').hide();  $('#alert').hide();
+});
+
+socket.on('server-ridirect-after-logout', function() {
+  $('#wrap-login').show(); $('#wrap-messages').hide();  $('#alert').hide();
+});
+
+
+socket.on('server-send-meesages', function(content) {
+$('#content-messages').prepend(`<article style="position:relative; padding-left:50px;">
+    <div style="width:40px;float:left;position:absolute;left:0;top:20px;"><img style="width: 40px;
+height: 40px;
+object-fit: cover;
+border-radius: 100% !important;
+border: 1px solid #eee;" class="sidebar-avatar" src="images/hoangsi.png" alt="`+content._username+`"> </div>
+    <div> <strong style="font-size:12px;text-transform:uppercase;color:#337ab7;" class="pull-left">`+content._username+`</strong> <a href="" class="label label-primary pull-right" style="font-weight:lighter;padding:2.5px 5px"><i class="fa fa-caret-down" aria-hidden="true"></i></a> <span class="label label-info pull-right" style="font-weight:lighter;padding:3px 5px;"> 27/06/2017 - 10:12 am</span>
+        <div class="clearfix"></div>
+        <p> `+content._content+` </p>
+    </div>
+</article>`);
+});
+
+
+
+
+
+
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('#register').click(function(){
+      var get_user_name = $('#username').val();
+      var get_passs_word = $('#password').val();
+      var data_register = [get_user_name, get_passs_word];
+      socket.emit('client-register', data_register );
+    });
+
+    $('#logout').click(function(){
+      socket.emit('logout');
+    });
+
+    $('#send').click(function(){
+      var content = $('#content').val();
+      if(content!='') {
+        socket.emit('user-send-messages', content);
+        $('#content').val('');
+      }
+
+
+    });
+
+    $('#content').on('keypress', function(e) {
+      var content = $('#content').val();
+					var keycode = (event.keyCode ? event.keyCode : event.which);
+					if ((e.keyCode == 10 || e.keyCode == 13) && !e.shiftKey) {
+						e.preventDefault();
+            $('#content').val($('#content').val() + "\n");
+					 }
+           if ((e.keyCode == 10 || e.keyCode == 13) && e.shiftKey) {
+             e.preventDefault();
+             if(content!='') {
+               socket.emit('user-send-messages', content);
+               $('#content').val('');
+             }
+            }
+
+
+
+
+			});
+
+
+    /* ------------------ */
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover { background-color: #6bc4ff; border:none;border-bottom:1px solid #fff; }
+.list-group-item.active strong, .list-group-item.active:focus strong, .list-group-item.active:hover strong {color:#fff !important;} 

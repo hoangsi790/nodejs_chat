@@ -1,0 +1,84 @@
+@charset "utf-8";
+html, body { height: 100%; }
+body { background: #ebf7ff; color: #555; word-wrap:break-word;}
+* { border-radius: 0 !important; }
+/**/
+.primary-header {}
+/**/
+.search-custom { padding: 25px 20PX; width: 100%; }
+.primary-navigation { color: #fff; background-color: #fff; }
+.primary-navigation li a { color: #fff; padding: 20px; border-radius: 0; }
+.primary-navigation li a:hover, .primary-navigation li.active a { background: #fff; color: #d9534f; }
+.primary-content-text { background-color: #fff; height:590px;overflow-y:scroll;  display: flex;
+  flex-direction: column-reverse;}
+
+.primary-content-text::-webkit-scrollbar {
+ width: 7px;
+ background-color: #F5F5F5;
+}
+.primary-content-text::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ border-radius: 10px;
+ background-color: #F5F5F5;
+}
+.primary-content-text::-webkit-scrollbar-thumb {
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #ccc;
+}
+
+.result-text p { margin: 0 0 15px 0; padding: 15px; border-radius: 5px !important; background: #ebf7ff;    color: #666;font-size:14px;}
+.result-text p:nth-child(even) { }
+.result-text p:nth-child(odd) { }
+.copyright { background: #fff; padding: 15px; padding-bottom: 5px; text-align: center; margin-top: 30px; position: fixed; bottom: 0; left: 0; width: 100%; }
+/**/
+#form-search, #form-search input { width: 100%; box-shadow:none;}
+.search-custom {border:none;}
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+#searchfield form { display: inline-block; background: #eeefed; padding: 0; margin: 0; padding: 5px; border-radius: 3px; margin: 5px 0 0 0; }
+#searchfield form .biginput { width: 600px; height: 40px; padding: 0 10px 0 10px; background-color: #fff; border: 1px solid #c8c8c8; border-radius: 3px; color: #aeaeae; font-weight: normal; font-size: 1.5em; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear; }
+#searchfield form .biginput:focus { color: #858585; }
+.flatbtn { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; outline: 0; border: 0; color: #f3faef; text-decoration: none; background-color: #6bb642; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); font-size: 1.2em; font-weight: bold; padding: 12px 22px 12px 22px; line-height: normal; text-align: center; vertical-align: middle; cursor: pointer; text-transform: uppercase; text-shadow: 0 1px 0 rgba(0,0,0,0.3); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3); -moz-box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3); box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3); }
+.flatbtn:hover { color: #fff; background-color: #73c437; }
+.flatbtn:active { -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); }
+.autocomplete-suggestions { border: 1px solid #ccc; background: #fff; cursor: default; overflow: auto; border-radius: 4px; }
+.autocomplete-suggestion { padding: 7px 10px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #d9534f; }
+/**/
+#list-online .list-group-item {padding:5px 10px;border:none;border-bottom:1px solid #eee; margin:0; }
+#list-online .avatar .sidebar-avatar { width: 40px; height: 40px; object-fit: cover; border-radius: 100% !important; border: 1px solid #eee; }
+#list-online .sidebar-user small {  font-size: 10px; }
+#list-online .sidebar-user strong {color:#337ab7;font-size:12px;}
+#list-online { overflow-y: scroll; height: 100%; position: absolute; left: 0; top: 50px; width: 100%; }
+#list-online {padding-right:1px;margin-top:1px;}
+#list-online::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ border-radius: 10px;
+ background-color: #F5F5F5;
+}
+#list-online::-webkit-scrollbar {
+ width: 7px;
+ background-color: #F5F5F5;
+}
+ #list-online::-webkit-scrollbar-thumb {
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #ccc;
+}
+/**/
+#sidebar { position: relative; height: 792px; bottom: 0; top: 0; }
+#content::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ border-radius: 10px;
+ background-color: #F5F5F5;
+}
+#content::-webkit-scrollbar {
+ width: 7px;
+ background-color: #F5F5F5;
+}
+ #content::-webkit-scrollbar-thumb {
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #ccc;
+}

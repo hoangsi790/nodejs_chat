@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Index</title>
+  <style>
+    #wrapper {
+      width: 700px;
+    }
+
+    #content-messages {
+      background: #ccc;
+      padding: 15px;
+      box-sizing: border-box;
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    label {
+      display: block;
+    }
+    #alert {color: #f00;}
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+
+<div id="alert">
+
+</div>
+
+    <div id="wrap-login">
+      <label>Username : <input type="text" name="username" id="username"></label>
+      <label>Password : <input type="text" name="password" id="password"></label>
+      <button type="button" name="login" id="register">Login</button>
+    </div>
+
+    <div id="wrap-messages">
+      <table>
+        <tr>
+          <td style="width:30%;">Đang Online</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="vertical-align:top;">
+            <ul id="list_online">
+
+
+            </ul>
+          </td>
+          <td>
+
+            <div id="content-messages">
+
+            </div>
+            <br> <br>
+
+            <label style="float:right;" id="hello_guest"></label> <a href="#" id="logout">Đăng xuất</a>
+            <textarea name="content" rows="8" cols="80" id="content"></textarea><br>
+            <button type="button" name="send" id="send">Send</button></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+
+  <script src="scripts/jquery.min.js"></script>
+  <script> $('#wrap-login').show(); $('#wrap-messages').hide(); $('#alert').hide(); </script>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://localhost:3000/'); // Kết nối với server
+    socket.on('server-register-fail', function(data_register) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+      $('#alert').show();
+     $('#alert').html('Tên người dùng '+data_register[0]+' đã tồn tại <br />');
+  });
+
+    socket.on('server-register-success', function(data_register) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+     $('#hello_guest').html('Chào '+data_register[0]);
+     $('#alert').show();
+     $('#wrap-login').hide(); $('#wrap-messages').show();
+   });
+
+    socket.on('server-list-online', function(arr_User) { /* Khách hàng lắng nghe dữ liệu từ server gửi xuống */
+
+      $('#list_online').html('');
+     arr_User.forEach(function(i){
+       $('#list_online').append('<li><a href="#"> '+i+' </a></li>');
+     });
+     });
+
+
+     socket.on('server-ridirect-user-online', function(id_online) {
+      $('#alert').html('Người dùng '+id_online+' đã online <br />');
+     });
+
+
+
+  socket.on('server-difirence-user-logout', function(id_logout) {
+    $('#alert').html('Người dùng '+id_logout+' đã offline <br />');
+  });
+
+  socket.on('server-ridirect-after-logout', function() {
+    $('#wrap-login').show(); $('#wrap-messages').hide();  $('#alert').hide();
+  });
+
+  socket.on('server-ridirect-after-logout', function() {
+    $('#wrap-login').show(); $('#wrap-messages').hide();  $('#alert').hide();
+  });
+
+
+socket.on('server-send-meesages', function(content) {
+  $('#content-messages').append('<p><strong>'+ content._username +'</strong> : '+ content._content +'</p>');
+})
+
+
+
+
+
+
+
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#register').click(function(){
+        var get_user_name = $('#username').val();
+        var get_passs_word = $('#password').val();
+        var data_register = [get_user_name, get_passs_word];
+        socket.emit('client-register', data_register );
+      });
+
+      $('#logout').click(function(){
+        socket.emit('logout');
+      });
+
+      $('#send').click(function(){
+        var content = $('#content').val();
+        socket.emit('user-send-messages', content);
+      });
+      /* ------------------ */
+    });
+  </script>
+
+</body>
+
+</html>
